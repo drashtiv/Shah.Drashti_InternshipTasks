@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Login page </h1>
+<div class="modal fade" id="loginmodel" tabindex="-1" aria-labelledby="loginmodel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          <form action='/login' method='post'> {% csrf_token %} 
+            <div class="mb-3">
+              <label for="loginusername" class="form-label">User name</label>
+              <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="enter username" required>
+            </div>
+    
+          <div class="mb-3">
+            <label for="loginpassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="enter your password" required>
+          </div>
+  
+        {% csrf_token %} 
+  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
